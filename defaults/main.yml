@@ -1,0 +1,9 @@
+---
+
+keepalived_instance_interface: eth0
+keepalived_vrrp_state: ""
+keepalived_virtual_router_id: ""
+keepalived_router_id: ""
+keepalived_track_process: ""
+keepalived_instance_priority: ""
+keepalived_virtual_ip: ""

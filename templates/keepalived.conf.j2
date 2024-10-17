@@ -1,0 +1,23 @@
+global_defs {
+  router_id  {{ keepalived_router_id }}_{{ inventory_hostname_short }}
+}
+
+vrrp_track_process track_{{ keepalived_track_process }} {
+      process {{ keepalived_track_process }}
+}
+
+vrrp_instance {{ inventory_hostname_short }} {
+  state {{ keepalived_vrrp_state }}
+  interface {{ keepalived_instance_interface }}
+  virtual_router_id {{ keepalived_virtual_router_id }}
+  priority {{ keepalived_instance_priority }}
+
+  virtual_ipaddress {
+   {{ keepalived_virtual_ip }}
+  }
+
+  track_process {
+         track_{{ keepalived_track_process }}
+  }
+}
+
